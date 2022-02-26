@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socketio & Python Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="contaner">
+        <div>
+            <form action="/join" method="post" id="form">
+                <label for="name">Enter your nickname:</label>
+                <input type="text" id="name" name="name" required autofocus>
+
+                <label for="room">Enter the room code:</label>
+                <input type="text" id="room" name="room" required>
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
+
+    <style>
+        .contaner div {
+            display: flex;
+            height: 98vh;
+            min-height: 600px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container div>form {
+            margin: 0 auto;
+            text-align: center;
+            width: 320px;
+            height: 420px;
+            color: #fff;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+            padding: 70px 30px;
+        }
+
+        .contaner div>form label {
+            font-weight: bold;
+            display: block;
+        }
+
+        .contaner div>form input {
+            width: 100%;
+            margin-bottom: 20px;
+            border: none;
+            outline: none;
+            color: #fff;
+        }
+
+        .contaner div>form input[type="text"] {
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            padding: 10px 0;
+            font-size: 16px;
+        }
+
+        .contaner div>form input[type="submit"] {
+            cursor: pointer;
+            height: 40px;
+            background: #212121;
+            font-size: 18px;
+            border-radius: 70px;
+        }
+
+        .contaner div>form input[type="submit"]:hover {
+            background: #00ded6;
+        }
+    </style>
+</body>
+
+</html>

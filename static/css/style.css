@@ -1,0 +1,93 @@
+html {
+    margin: 0 auto;
+    padding: 0;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+body {
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.contaner {
+    display: flex;
+    justify-content: center;
+}
+
+.base {
+    width: 60%;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+.title h1 {
+    color: #9FD5D1;
+    line-height: 1px;
+    padding: 6px;
+}
+
+.title p {
+    line-height: 1px;
+    padding: 6px;
+    margin-top: -6px;
+}
+
+.content {
+    width: 90%;
+    max-height: 750px;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+
+.content ul {
+    height: auto;
+    text-align: left;
+    padding: 2px;
+}
+
+.content ul li {
+    list-style: none;
+    margin-bottom: 9px;
+}
+
+.textbox {
+    position: absolute;
+    display: block;
+    bottom: 24px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.textbox input {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    outline: none;
+    border: 1px solid #eeeeee;
+    height: 24px;
+}
+
+.textbox button {
+    width: 55px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    outline: none;
+    border: 1px solid #eeeeee;
+    height: 28px;
+}
+
+@media screen and (max-width: 900px) and (orientation: portrait) {
+    .base {
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    .content {
+        width: 100%;
+        max-height: 450px;
+    }
+}   

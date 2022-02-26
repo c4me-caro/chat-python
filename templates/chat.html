@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socketio and Python Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="contaner">
+        <div class="base">
+            <div class="title">
+                <h1>Chat ROOM </h1>
+                <p>{{ name }}</p>
+            </div>
+
+            <div class="content">
+                    <ul id="receitor"></ul>
+            </div>
+        </div>
+        <div class="textbox">
+            <input type="text" id="message" onkeypress="pulse(event)" autofocus>
+            <input type="hidden" name="room" id="room" value="{{ room }}">
+            <button id="send" onclick="sendmessage()">send</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"
+        integrity="sha512-MgkNs0gNdrnOM7k+0L+wgiRc5aLgl74sJQKbIWegVIMvVGPc1+gc1L2oK9Wf/D9pq58eqIJAxOonYPVE5UwUFA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static', filename='js/socket.js') }}"></script>
+
+</body>
+
+</html>
