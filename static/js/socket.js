@@ -12,6 +12,10 @@ socket.on('chat', function(msg) {
     receitor.appendChild(li);
 });
 
+window.addEventListener("beforeunload", function (e) {
+    socket.emit('leave', {room:room});
+});
+
 function sendmessage() {
     var msg = document.getElementById("message");
     socket.emit('chat', {message:msg.value, room:room});

@@ -1,6 +1,6 @@
 import json
 from flask import Flask, redirect, render_template, request, redirect, make_response
-from flask_socketio import SocketIO, emit, join_room
+from flask_socketio import SocketIO, emit, join_room, leave_room
 import random
 
 app = Flask(__name__)
@@ -42,6 +42,13 @@ def assign(data):
     name = json.loads(request.cookies.get('user'))["name"]
     font = json.loads(request.cookies.get('user'))["font"]
     emit('chat', font + name + ": has join the chat</font>", broadcast=True, to=data["room"])
+
+@socketio.on('leave')
+def unset(data):
+    leave_room(data["room"])
+    name = json.loads(request.cookies.get('user'))["name"]
+    font = json.loads(request.cookies.get('user'))["font"]
+    emit('chat', font + name + ": has leaved the chat</font>", broadcast=True, to=data["room"])
 
 if __name__ == '__main__':
     socketio.run(app)
